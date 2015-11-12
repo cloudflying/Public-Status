@@ -177,7 +177,7 @@
         </div>
 
         <%-- Incident Listings --%>
-            <div class="incident-list">
+          <%--  <div class="incident-list">
                 <div class="row">
                     <div class="col-xs-12">
                         <h4>Nov 8, 2015</h4>
@@ -205,13 +205,15 @@
                         <p>No Incidents reported today.</p>
                    </div>
                 </div>
-            </div>
+            </div>--%>
 
 
 
     </div>
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/moment.js"></script>
+    <script src="js/livestamp.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
     <script type="text/javascript">

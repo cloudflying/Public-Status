@@ -11,6 +11,14 @@ Partial Class _Default
     Dim unScheduledMaintenance As Boolean = False
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
         Try
+
+            If regenerateConfig() = False Then
+                Response.Redirect("/setup", False)
+            End If
+
+
+
+
             If config.dbChecked = False Then
                 If checkDatabase.checkDB() = False Then
                     If createDatabase.buildDatabase() Then
@@ -79,7 +87,7 @@ Partial Class _Default
 
 
 
-                            Dim overallStatusBar As String = "<div class=""row ""><div class=""col-xs-12 status-bar {{STATUSBARCSS}}""><div class=""row""><div class=""col-md-6""><h4>{{STATUSLABEL}}</h4></div><div class=""col-md-6 text-right"">Refreshed less than one minute ago</div></div></div></div>"
+                            Dim overallStatusBar As String = "<div class=""row ""><div class=""col-xs-12 status-bar {{STATUSBARCSS}}""><div class=""row""><div class=""col-md-6""><h4>{{STATUSLABEL}}</h4></div><div class=""col-md-6 text-right"">Refreshed <span data-livestamp=""" & Epoch.ToUnix(DateTime.Now.ToUniversalTime) & """></span></div></div></div></div>"
 
                             ' {{STATUSBARCSS}} - maintenance
                             ' {{STATUSLABEL}} - Operational
