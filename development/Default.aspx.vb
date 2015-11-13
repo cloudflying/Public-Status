@@ -65,11 +65,11 @@ Partial Class _Default
                             End If
 
                             Dim siteRow As DataRow = siteData.Rows(0)
+                            Me.Title = siteRow.Item("SITE_TITLE").ToString
+                            lblTitle.Text = siteRow.Item("SITE_TITLE").ToString
 
 
-
-
-                            .CommandText = "SELECT * FROM PS_CHECK_LIST WHERE CHECK_RUN=1 AND PS_SITE_ID=@PS_SITE_ID;"
+                            .CommandText = "SELECT * FROM PS_CHECK_LIST WHERE CHECK_RUN=1 AND PS_SITE_ID=@PS_SITE_ID ORDER BY CHECK_PUBLIC_STATUS ASC;"
                             .Parameters.Clear()
                             .Parameters.AddWithValue("@PS_SITE_ID", siteRow.Item("PS_SITE_ID"))
 

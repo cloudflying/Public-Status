@@ -91,7 +91,7 @@
         }
         .incident-list h4 {
             padding-bottom: 10px;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid rgba(0,0,0,0.3);
         }
         .incident-list p {
             color: #aaa;
@@ -103,7 +103,7 @@
         .incident-list .row {
             margin-top: 2rem;
         }
-        .incident-list .row, .incident-list .col-xs-12 {
+        .incident-list .row, .incident-list .col-xs-12, footer .col-xs-12 {
             padding-left: 0px;
             padding-right: 0px;
         }
@@ -112,6 +112,11 @@
             font-weight: 700;
             font-size: 1.5em;
            line-height: 1.7em;
+        }
+        @media (max-width:650px) {
+            .text-right {
+                text-align:left!important;
+            }
         }
     </style>
 </head>
@@ -177,7 +182,8 @@
         </div>
 
         <%-- Incident Listings --%>
-          <%--  <div class="incident-list">
+            <div class="incident-list">
+                <div class="row"><div class="col-xs-12"><h2>Past Incidents</h2></div></div>
                 <div class="row">
                     <div class="col-xs-12">
                         <h4>Nov 8, 2015</h4>
@@ -205,11 +211,21 @@
                         <p>No Incidents reported today.</p>
                    </div>
                 </div>
-            </div>--%>
+            </div>
 
 
 
     </div>
+    <footer class="container-fluid" style="border-top: 1px solid rgba(0,0,0,0.1);padding-top: 25px; padding-bottom:25px;">
+        <div class="container">
+            <div class="row">
+            <div class="col-xs-12">
+                <asp:Label ID="lblTitle" runat="server"></asp:Label> Status Page is powered by <a href="#">Public Status</a>.
+
+            </div>
+                </div>
+        </div>
+    </footer>
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="/js/moment.js"></script>
